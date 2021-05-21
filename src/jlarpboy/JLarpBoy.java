@@ -18,15 +18,15 @@ public class JLarpBoy {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-               ClientView view = new ClientView();
+        ClientView view = new ClientView();
         ClientModel model = new ClientModel();
         ClientPresenter presenter = new ClientPresenter(view, model);
-            
+
         view.setVisible(true);
-     
+
         AppControllerReflect appController = AppControllerReflectFactory
-                            .getAppControllerInstance();
+                .getAppControllerInstance();
         appController.bind(view, model, presenter);
     }
-    
+
 }

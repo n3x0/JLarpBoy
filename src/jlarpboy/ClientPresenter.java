@@ -5,6 +5,9 @@
  */
 package jlarpboy;
 
+import org.mvp4j.impl.reflect.AppControllerReflect;
+import org.mvp4j.impl.reflect.AppControllerReflectFactory;
+
 /**
  *
  * @author nexo_
@@ -21,5 +24,21 @@ public class ClientPresenter {
 
     public void actionExemple() {
         System.out.println("Hello world, this action event work just fine");
+    }
+
+    public void actionFisicosMas() {
+        model.setFisicoProperty(model.getFisicoProperty() + 1);
+        AppControllerReflect appController = AppControllerReflectFactory
+                .getAppControllerInstance();
+        // call the AppController to refresh the view
+        appController.refreshView(view);
+    }
+
+    public void actionFisicosMenos() {
+        model.setFisicoProperty(model.getFisicoProperty() - 1);
+        AppControllerReflect appController = AppControllerReflectFactory
+                .getAppControllerInstance();
+        // call the AppController to refresh the view
+        appController.refreshView(view);
     }
 }

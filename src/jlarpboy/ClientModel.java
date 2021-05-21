@@ -13,7 +13,9 @@ import java.io.Serializable;
  */
 public class ClientModel implements Serializable {
 
-    private String modelProperty;
+    private String modelProperty = "hola";
+    private int fisicoProperty = 2;
+    private String logProperty = "";
 
     public String getModelProperty() {
         return modelProperty;
@@ -22,4 +24,23 @@ public class ClientModel implements Serializable {
     public void setModelProperty(String modelProperty) {
         this.modelProperty = modelProperty;
     }
+
+    public int getFisicoProperty() {
+        return fisicoProperty;
+    }
+
+    public void setFisicoProperty(int fisicoProperty) {
+        this.fisicoProperty = fisicoProperty;
+        setLogProperty(getLogProperty() + "\n" + "Los atributos físicos ahora valen: " + fisicoProperty);
+
+    }
+
+    public String getLogProperty() {
+        return logProperty;
+    }
+
+    public void setLogProperty(String logProperty) {
+        this.logProperty = logProperty;
+    }
+
 }
